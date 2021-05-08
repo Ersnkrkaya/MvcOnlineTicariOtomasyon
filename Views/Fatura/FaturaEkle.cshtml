@@ -1,0 +1,32 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Faturalar
+@{
+    ViewBag.Title = "FaturaEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>FaturaEkle</h2>
+<form method="post" class="form-group">
+    @Html.LabelFor(k => k.FaturaSeriNo)
+    @Html.TextBoxFor(k => k.FaturaSeriNo, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.FaturaSiraNo)
+    @Html.TextBoxFor(k => k.FaturaSiraNo, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.Tarih)
+    @Html.TextBoxFor(k => k.Tarih, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.Saat)
+    @Html.TextBoxFor(k => k.Saat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.VergiDairesi)
+    @Html.TextBoxFor(k => k.VergiDairesi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.TeslimEden)
+    @Html.TextBoxFor(k => k.TeslimEden, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.TeslimAlan)
+    @Html.TextBoxFor(k => k.TeslimAlan, new { @class = "form-control" })
+    <br />
+
+    <input type="submit" class="btn btn-primary" value="Kategori Ekle" />
+</form>

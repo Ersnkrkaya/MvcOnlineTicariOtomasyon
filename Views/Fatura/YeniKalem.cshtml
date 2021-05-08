@@ -1,0 +1,27 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.FaturaKalem
+@{
+    ViewBag.Title = "YeniKalem";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>YeniKalem Girişi</h2>
+
+<form method="post" class="form-group">
+    @Html.LabelFor(k => k.Aciklama)
+    @Html.TextBoxFor(k => k.Aciklama, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.Miktar)
+    @Html.TextBoxFor(k => k.Miktar, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.BirimFiyat)
+    @Html.TextBoxFor(k => k.BirimFiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.Tutar)
+    @Html.TextBoxFor(k => k.Tutar, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(k => k.Faturaid)
+    @Html.TextBoxFor(k => k.Faturaid, new { @class = "form-control" })
+    <br />
+
+    <input type="submit" class="btn btn-primary" value="Kategori Ekle" />
+</form>

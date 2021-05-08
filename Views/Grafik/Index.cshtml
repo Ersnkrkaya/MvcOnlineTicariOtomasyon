@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+@{ 
+    var grafik = new Chart(width: 500, height: 500);  //Vİew üzerinde chart kullanımı için grafik değeri üretip chart sınıfını türettik. Chart sınıfının boyutunu belirledik.
+    grafik.AddTitle(text: "Kategoriler ve Ürün Sayıları"); //Chart Başlığı
+    grafik.AddLegend(title: "Değerler"); // Chart değerleri
+
+    grafik.AddSeries(  //x ve y dizininde ki değerleri ve bu değerlerin başlığını belirliyoruz
+        name:"Veriler",
+        chartType:"pie",//Bi chart türü olan buble,pie,doughnut,area,bar
+        xValue: new[] {"Beyaz Eşya","Televizyon","Bilgisayar","Küçük Ev Aletleri"},
+        yValues: new[] {500,250,340,620}
+        );
+    grafik.Write();//ekrana bastır
+}

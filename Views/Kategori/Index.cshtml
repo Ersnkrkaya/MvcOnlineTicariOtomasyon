@@ -1,0 +1,44 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@* @model List<Kategori>*@
+
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Kategori>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<table class="table table-bordered" style="margin:20px">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Kategori Adı</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Kategori in Model)
+        {
+            <tr>
+                <td>@Kategori.KategoriID</td>
+                <td>@Kategori.KategoriAd</td>
+                <td><a href="/Kategori/KategoriSil/@Kategori.KategoriID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Kategori/KategoriGetir/@Kategori.KategoriID" class="btn btn-success">Güncelle</a></td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }),
+    new PagedListRenderOptions
+    {
+        LiElementClasses=new List<string>
+        {
+            "page-link"
+        }
+    }
+)
+<a class="btn btn-primary" href="/Kategori/YeniKategori">Yeni Kategori</a>

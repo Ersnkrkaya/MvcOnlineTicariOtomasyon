@@ -1,0 +1,35 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.SatisHareket
+@{
+    ViewBag.Title = "SatisGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Satis İşlemi Güncelleme Sayfası</h2>
+
+@using (Html.BeginForm("SatisGuncelle", "Satis", FormMethod.Post))
+{
+    @Html.HiddenFor(u => u.Satisid)
+
+    @Html.LabelFor(u => u.Urun)
+    @Html.DropDownListFor(x => x.Urunid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+    <br />
+    @Html.Label("Cari")
+    @Html.DropDownListFor(x => x.Cariid, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+    <br />
+    @Html.Label("Personel")
+    @Html.DropDownListFor(x => x.Personelid, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(u => u.Adet)
+    @Html.TextBoxFor(u => u.Adet, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(u => u.Fiyat)
+    @Html.TextBoxFor(u => u.Fiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(u => u.ToplamTutar)
+    @Html.TextBoxFor(u => u.ToplamTutar, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-warning">Ürün Güncelle</button>
+}
+<br />

@@ -1,0 +1,36 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Urun
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>YeniUrun</h2>
+
+<form method="post" class="form-group">
+    @Html.LabelFor(u => u.UrunAd)
+    @Html.TextBoxFor(u => u.UrunAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(u => u.Marka)
+    @Html.TextBoxFor(u => u.Marka, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(u => u.Stok)
+    @Html.TextBoxFor(u => u.Marka, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(u => u.AlisFiyat)
+    @Html.TextBoxFor(u => u.Marka, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(u => u.SatisFiyat)
+    @Html.TextBoxFor(u => u.Marka, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(u => u.Kategori.KategoriID)
+    @Html.DropDownListFor(x => x.Kategoriid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+
+    <br />
+    @Html.LabelFor(u => u.UrunGorsel)
+    @Html.TextBoxFor(u => u.UrunGorsel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(u => u.Durum)
+    @Html.TextBoxFor(u => u.Durum, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Ürün Kaydet</button>
+</form>

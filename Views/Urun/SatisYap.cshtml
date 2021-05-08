@@ -1,0 +1,45 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.SatisHareket
+@{
+    ViewBag.Title = "SatisYap";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>SatisYap</h2>
+
+
+<form method="post" class="form-group">
+    @Html.Label("Ürün Id")
+    <input type="text" name="Urunid" value="@ViewBag.dgr1" class="form-control" readonly />
+    <br />
+    @Html.Label("Personel")
+    @Html.DropDownListFor(x => x.Personelid, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(u => u.Cariid)
+    @Html.TextBoxFor(u => u.Cariid, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(u => u.Adet)
+    <input type="number" class="form-control" min="0" max="10" id="Adet" name="Adet" onchange="sum()" placeholder="Adet Giriniz" />
+    <br />
+    @Html.LabelFor(u => u.Fiyat)
+    <input type="text" name="Fiyat" value="@ViewBag.dgr2" id="Urunid" onkeyup="sum()" class="form-control" />
+    <br />
+
+    @Html.LabelFor(u => u.ToplamTutar)
+    <input type="text" name="ToplamTutar" value="0" id="txt3"  class="form-control" readonly />
+    <br />
+    <button class="btn btn-primary">Satış Yap</button>
+</form>
+<br />
+
+<script>
+    function sum() {
+        var sayi1 = document.getElementById('Adet').value;
+        var sayi2 = document.getElementById('Urunid').value;
+        var sonuc = parseInt(sayi1) * parseInt(sayi2);
+        if (!isNaN(sonuc)) {
+            document.getElementById('txt3').value = sonuc;
+        }
+
+    }
+</script>
+

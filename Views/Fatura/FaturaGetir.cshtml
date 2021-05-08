@@ -1,0 +1,35 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Faturalar
+@{
+    ViewBag.Title = "FaturaGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>FaturaGetir</h2>
+
+@using (Html.BeginForm("FaturaGuncelle", "Fatura", FormMethod.Post))
+{
+    @Html.HiddenFor(u => u.Faturaid)
+    @Html.LabelFor(u => u.FaturaSeriNo)
+    @Html.TextBoxFor(u => u.FaturaSeriNo, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(u => u.FaturaSiraNo)
+    @Html.TextBoxFor(u => u.FaturaSiraNo, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(u => u.VergiDairesi)
+    @Html.TextBoxFor(u => u.VergiDairesi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(u => u.Tarih)
+    @Html.TextBoxFor(u => u.Tarih, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(u => u.Saat)
+    @Html.TextBoxFor(u => u.Saat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(u => u.TeslimEden)
+    @Html.TextBoxFor(u => u.TeslimEden, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(u => u.TeslimAlan)
+    @Html.TextBoxFor(u => u.TeslimAlan, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-warning">Ürün Güncelle</button>
+}
+<br />
